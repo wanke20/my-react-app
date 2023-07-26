@@ -9,7 +9,6 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { HomePage, CounterButtonPage, PeopleListPage } from "./pages";
 
 function App() {
-  // not needed for now
   // const [numberOfClicks, setNumberOfClicks] = useState(0);
   // const [hideMessage, setHideMessage] = useState(false);
 
