@@ -1,32 +1,30 @@
-// import logo from "./logo.svg";
 import "./App.css";
-import { Greeting } from "./Greeting";
-import { PeopleList } from "./PeopleList";
+// import { CongratulationsMessage } from "./CongratulationsMessage";
+// import { CounterButton } from "./CounterButton";
+// import { Greeting } from "./Greeting";
+// import { PeopleList } from "./PeopleList";
 import React from "react";
-
-const people = [{
-  name: 'John',
-  age: 40,
-  hairColor: 'brown',
-}, {
-  name: 'Helga',
-  age: 25,
-  hairColor: 'red',
-}, {
-  name: 'Dwayne',
-  age: 55,
-  hairColor: 'blonde',
-}]
+// import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { HomePage, CounterButtonPage, PeopleListPage } from "./pages";
 
 function App() {
-  let adjective = "cool";
-  let url = "https://reactjs.org";
+  // const [numberOfClicks, setNumberOfClicks] = useState(0);
+  // const [hideMessage, setHideMessage] = useState(false);
+
+  // const increment = () => setNumberOfClicks(numberOfClicks + 1);
 
   return (
     <div className="App">
-      <header className="App-header">
-        
-      </header>
+      <Router>
+        <Link to="/counter">Go to Counter Page</Link>
+        <Link to="/people-list">Go to People List Page</Link>
+        <Routes>
+          <Route path="/" exact element={<HomePage />} />
+          <Route path="/counter" element={<CounterButtonPage />} />
+          <Route path="/people-list" element={<PeopleListPage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
