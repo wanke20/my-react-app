@@ -3,16 +3,16 @@ import "./App.css";
 // import { CounterButton } from "./CounterButton";
 // import { Greeting } from "./Greeting";
 // import { PeopleList } from "./PeopleList";
-import React from "react";
-// import React, { useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import { HomePage, CounterButtonPage, PeopleListPage } from "./pages";
+import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, 
+  ProtectedPage } from "./pages";
 
 function App() {
-  // const [numberOfClicks, setNumberOfClicks] = useState(0);
-  // const [hideMessage, setHideMessage] = useState(false);
+  const [numberOfClicks, setNumberOfClicks] = useState(0);
+  const [hideMessage, setHideMessage] = useState(false);
 
-  // const increment = () => setNumberOfClicks(numberOfClicks + 1);
+  const increment = () => setNumberOfClicks(numberOfClicks + 1);
 
   return (
     <div className="App">
@@ -20,9 +20,11 @@ function App() {
         <Link to="/counter">Go to Counter Page</Link>
         <Link to="/people-list">Go to People List Page</Link>
         <Routes>
-          <Route path="/" exact element={<HomePage />} />
+          <Route exact path="/" element={<HomePage />} />
           <Route path="/counter" element={<CounterButtonPage />} />
           <Route path="/people-list" element={<PeopleListPage />} />
+          <Route path="/protected" element={<ProtectedPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
     </div>
