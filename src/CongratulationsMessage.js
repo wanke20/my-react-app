@@ -1,15 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-export const CongratulationsMessage = ({ numberOfClicks, threshold, onHide }) => {
-    useEffect(() => {
-        console.log('CongratulationsMessage mounting!');
-        return () => console.log('CongratulationsMessage unmounting!');
-    }, []);
+export const CongratulationsMessage = ({ threshold, onHide }) => {
 
-    return numberOfClicks >= threshold
-        ? <>
+    return (
+        <>
             <h1>Congratulations! You've reached {threshold} number of clicks</h1>
             <button onClick={onHide}>Hide</button>
         </>
-        : null;
+    );
 }
