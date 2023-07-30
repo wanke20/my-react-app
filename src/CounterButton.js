@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
+import { Button } from './Button';
 
 export const CounterButton = ({ onIncrement, numberOfClicks }) => {
-    useEffect(() => {
-        console.log('useEffect function called!');
-    }, []);
-
     return (
         <>
             <p>You've clicked the button {numberOfClicks} times</p>
-            <button onClick={onIncrement}>Click Me!</button>
+            <Button buttoncolor = "red" onClick={onIncrement}>Click Me!</Button>
         </>
     )
 }

@@ -6,3 +6,4 @@ export { ProtectedPage } from './ProtectedPage';
 export { NotFoundPage } from './NotFoundPage';
 export { UncontrolledFormPage } from './UncontrolledFormPage';
 export { UserProfilePage } from './UserProfilePage';
+export { UserDataLoader } from './UserDataLoader';
